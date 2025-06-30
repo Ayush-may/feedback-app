@@ -11,7 +11,8 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/feedback', require('./middlewares/authMiddleware'), require('./routes/feedback'));
+// app.use('/api/feedback', require('./middlewares/authMiddleware'), require('./routes/feedback'));
+app.use('/api/feedback', require('./routes/feedback'));
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log('MongoDB is connected')

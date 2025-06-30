@@ -12,7 +12,6 @@ module.exports = (req, res, next) => {
         req.user = decoded;
         next();
     } catch {
-        return res.send('ot workin')
-        // return res.status(401).json({ message: "Token invalid or expired" });
+        return res.status(401).json({ message: "Token invalid or expired" });
     }
 };
