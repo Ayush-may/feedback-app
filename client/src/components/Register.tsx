@@ -40,7 +40,7 @@ export default function Register() {
 
   return (
     <div className="w-screen h-screen bg-stone-100 flex items-center justify-center" >
-      <Card>
+      <Card className="w-11/12 md:w-7/12 lg:w-4/12" >
         <CardHeader>
           <CardTitle>Register</CardTitle>
           <CardDescription>
@@ -48,7 +48,7 @@ export default function Register() {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="w-[300px] md:w-[500px] lg:w-[600px]" >
+        <CardContent >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="flex flex-col gap-6 ">
               <div className="grid gap-2">

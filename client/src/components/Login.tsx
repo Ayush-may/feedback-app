@@ -30,11 +30,17 @@ export default function Login() {
       const response = await api.post('/auth/login', {
         ...data
       })
+
+      console.log(response)
+
+      if (response.data.token) {
+        localStorage.setItem('token', response.data.token)
+      }
       reset()
       toast.success(response.data.message, {
         description: "Please proceed to the login page to access your dashboard"
       })
-      console.log(response.data)
+      navigate('/dashboard')
     } catch (error: any) {
       toast.error(error.message, {
         description: "Please proceed to the login page to access your dashboard"
@@ -44,7 +50,7 @@ export default function Login() {
 
   return (
     <div className="w-screen h-screen bg-stone-100 flex items-center justify-center" >
-      <Card>
+      <Card className="w-11/12 md:w-7/12 lg:w-4/12" >
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardDescription>
@@ -52,7 +58,7 @@ export default function Login() {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="w-[400px]" >
+        <CardContent >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="flex flex-col gap-6 ">
               <div className="grid gap-2">

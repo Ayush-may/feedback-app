@@ -14,12 +14,13 @@ import { Input } from "./ui/input"
 import { Label } from "@radix-ui/react-label"
 import { useForm } from "react-hook-form";
 import Getfeedback from "./Getfeedback"
+import Gethistory from "./GetHistory"
 
 export default function Dashboard() {
     return (
-        <div className="w-screen h-screen bg-stone-100 flex pt-[100px] justify-center" >
+        <div className="max-w-screen min-h-screen pb-10 overflow-x-hidden bg-stone-100 flex pt-[100px] justify-center" >
 
-            <Tabs defaultValue="field" className="w-[600px]">
+            <Tabs defaultValue="field" className="w-11/12">
                 <TabsList>
                     <TabsTrigger value="field">Field</TabsTrigger>
                     <TabsTrigger value="history">History</TabsTrigger>
@@ -27,7 +28,9 @@ export default function Dashboard() {
                 <TabsContent value="field">
                     <Getfeedback />
                 </TabsContent>
-                <TabsContent value="history">Change your password here.</TabsContent>
+                <TabsContent value="history">
+                    <Gethistory />
+                </TabsContent>
             </Tabs>
         </div>
     )
