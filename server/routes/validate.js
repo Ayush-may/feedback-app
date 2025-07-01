@@ -12,3 +12,5 @@ router.post("/", (req, res) => {
         return res.status(401).json({ message: "Token invalid or expired" });
     }
 });
+
+module.exports = router

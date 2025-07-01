@@ -12,9 +12,6 @@ router.post('/', async (req, res) => {
         const user = await User
             .findById(userId)
 
-        // console.log(user)
-        // return res.send("")
-
         const promptText = `
         You are an expert reviewer. The following is a user-submitted text. Please provide clear, constructive, and helpful feedback on:
 
@@ -59,22 +56,3 @@ router.post('/', async (req, res) => {
 })
 
 module.exports = router
-
-// const d = {
-//     candidates: [
-//         {
-//             content: [Object],
-//             finishReason: 'STOP',
-//             avgLogprobs: -0.3530442592075893
-//         }
-//     ],
-//     usageMetadata: {
-//         promptTokenCount: 70,
-//         candidatesTokenCount: 350,
-//         totalTokenCount: 420,
-//         promptTokensDetails: [[Object]],
-//         candidatesTokensDetails: [[Object]]
-//     },
-//     modelVersion: 'gemini-2.0-flash',
-//     responseId: 'y3JjaNj_CqizxfcPvo3h8QI'
-// };
