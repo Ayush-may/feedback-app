@@ -19,7 +19,6 @@ import Gethistory from "./GetHistory"
 export default function Dashboard() {
     return (
         <div className="max-w-screen min-h-screen pb-10 overflow-x-hidden bg-stone-100 flex pt-[100px] justify-center" >
-
             <Tabs defaultValue="field" className="w-11/12">
                 <TabsList>
                     <TabsTrigger value="field">Field</TabsTrigger>

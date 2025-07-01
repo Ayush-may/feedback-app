@@ -40,7 +40,7 @@ export default function Getfeedback() {
     }
 
     return (
-        < Card >
+        <Card>
             <CardHeader>
                 <CardTitle>Get AI-Powered Feedback</CardTitle>
                 <CardDescription>Paste your response or short essay below and click "Get Feedback" to receive helpful suggestions from AI.</CardDescription>
