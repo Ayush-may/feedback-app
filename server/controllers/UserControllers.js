@@ -13,7 +13,7 @@ async function loginHandler(req, res) {
     if (!isMatch) return res.status(400).json({ message: "Invalid email or password" });
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "10s",
+      expiresIn: "1hr",
     });
 
     res.status(200).json({ token });
